@@ -17,6 +17,7 @@ services:
     networks:
       asixnetwork:
         ipv4_address: 192.168.0.6
+    dns: 192.168.0.7
     
   dns:
     build:
@@ -27,3 +28,5 @@ services:
     networks:
       asixnetwork:
         ipv4_address: 192.168.0.7
+    dns: 192.168.0.7
+    
