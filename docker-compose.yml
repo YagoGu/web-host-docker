@@ -1,0 +1,29 @@
+version: "3.9"
+networks:
+    asixnetwork:
+      ipam:
+        config:
+          - subnet: 192.168.0.0/24
+
+services:
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "8080:80"
+      - "8081:443"
+    networks:
+      asixnetwork:
+        ipv4_address: 192.168.0.6
+    
+  dns:
+    build:
+      context: .
+      dockerfile: dns/Dockerfile
+    ports:
+      - "8082:53"
+    networks:
+      asixnetwork:
+        ipv4_address: 192.168.0.7
