@@ -40,8 +40,8 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `Books` (`book_id`, `book_title`, `author_name`, `book_description`, `book_photo`) VALUES
-(1, 'Pride and Prejudice', 'Jane Austen', NULL, NULL),
-(2, '1984', 'George Orwell', NULL, NULL),
+(1, 'Pride and Prejudice', 'Jane Austen', 'Pride and Prejudice is a classic novel by Jane Austen. It follows the story of Elizabeth Bennet, a headstrong and independent young woman, and her tumultuous relationship with Mr. Darcy, a wealthy and proud gentleman. Set in 19th century England, the novel explores themes of love, marriage, social class, and societal expectations. With its witty dialogue, memorable characters, and enduring romance, Pride and Prejudice is considered one of the greatest works of English literature.', NULL),
+(2, '1984', 'George Orwell', '1984 is a dystopian novel by George Orwell. It depicts a totalitarian society ruled by the Party, led by Big Brother, where individualism and freedom are suppressed. The story follows Winston Smith, a disillusioned Party member, who rebels against the oppressive regime. Through vivid descriptions and thought-provoking concepts, Orwell explores the dangers of totalitarianism, censorship, and surveillance. 1984 is a chilling portrayal of a bleak future, warning about the consequences of unchecked government control and the loss of individuality.', NULL),
 (3, 'Crime and Punishment', 'Fyodor Dostoevsky', NULL, NULL),
 (4, 'Hamlet', 'William Shakespeare', NULL, NULL),
 (5, 'One Hundred Years of Solitude', 'Gabriel García Márquez', NULL, NULL),
