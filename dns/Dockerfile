@@ -7,8 +7,7 @@ RUN apt-get update && apt-get install -y bind9
 COPY /dns/named.conf /etc/bind/named.conf
 COPY /dns/thelibrary.asix /etc/bind/thelibrary.asix
 
-RUN chown :named /etc/bind/thelibrary.asix && /
-    ll /etc/bind/thelibrary.asix
+RUN chown :bind /etc/bind/thelibrary.asix
 
 # Puertos expuestos
 EXPOSE 53/tcp
