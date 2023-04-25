@@ -29,4 +29,15 @@ services:
       asixnetwork:
         ipv4_address: 192.168.0.7
     dns: 192.168.0.7
-    
+  
+  mysql:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    ports:
+      - "8083:3306"
+    networks:
+      asixnetwork:
+        ipv4_address: 192.168.0.8
+    volumes:
+        - './php/BBDDLibrary.sql:/var/lib/mysql/BBDDLibrary.sql'
