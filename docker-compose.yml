@@ -1,12 +1,11 @@
 version: "3.9"
 networks:
-    asixnetwork:
-      ipam:
-        config:
-          - subnet: 192.168.0.0/24
+  asixnetwork:
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24
 
 services:
-
   nginx:
     build:
       context: .
@@ -15,29 +14,46 @@ services:
       - "8080:80"
       - "8081:443"
     networks:
-      asixnetwork:
-        ipv4_address: 192.168.0.6
+       asixnetwork: 
+         ipv4_address: 192.168.0.6
     dns: 192.168.0.7
-    
+
   dns:
     build:
       context: .
       dockerfile: dns/Dockerfile
     ports:
-      - "8082:53"
+      - "53:53/udp"
+      - "53:53/tcp"
     networks:
-      asixnetwork:
-        ipv4_address: 192.168.0.7
+       asixnetwork: 
+         ipv4_address: 192.168.0.7
     dns: 192.168.0.7
-  
+    volumes:
+      - './dns:/etc/bind'
+      - '/named:/var/named'
+
   mysql:
-    build:
-      context: .
-      dockerfile: php/Dockerfile
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "BBDDLibrary"
+      MYSQL_PASSWORD: "password"
     ports:
       - "8083:3306"
     networks:
-      asixnetwork:
-        ipv4_address: 192.168.0.8
+       asixnetwork: 
+         ipv4_address: 192.168.0.8
     volumes:
-        - './php/BBDDLibrary.sql:/var/lib/mysql/BBDDLibrary.sql'
+      - './sql/BBDDLibrary.sql:/docker-entrypoint-initdb.d/BBDDLibrary.sql'
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - "8084:80"
+    networks:
+       asixnetwork: 
+         ipv4_address: 192.168.0.9
