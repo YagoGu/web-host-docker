@@ -14,7 +14,7 @@ COPY /nginx/default /etc/nginx/sites-available/default
 RUN mkdir /etc/nginx/ssl
 
 # Generar el certificado SSL autofirmado
-RUN openssl req -x509 -newkey rsa:4096 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt -days 365 -nodes -subj "/CN=localhost"
+RUN openssl req -x509 -newkey rsa:4096 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt -days 365 -nodes -subj "/CN=asix"
 
 # Establecer los permisos adecuados para los archivos SSL
 RUN chmod 400 /etc/nginx/ssl/nginx.key /etc/nginx/ssl/nginx.crt
