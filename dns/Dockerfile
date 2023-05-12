@@ -4,7 +4,7 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y bind9
 # Copia de archivos de configuración
 COPY dns/named.conf /var/named/named.conf
-COPY dns/thelibrary.asix /var/named/thelibrary.asix
+COPY dns/thelibrary.asix.zone /var/named/thelibrary.asix.zone
 
 RUN chown root:bind /var/named/*
 RUN chmod 775 /var/named/*
