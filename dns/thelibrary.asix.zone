@@ -1,0 +1,13 @@
+$TTL 2d
+;$ORIGIN thelibrary.asix.
+@	IN	SOA	ns.thelibrary.asix. hostmaster.thelibrary.asix. (
+						2003080800
+						12h
+						15m
+						3w
+						2h
+						)
+
+@	IN	NS	ns.thelibrary.asix.
+www	IN	A	192.168.0.6
+ns.thelibrary.asix.	IN	A	192.168.0.7
