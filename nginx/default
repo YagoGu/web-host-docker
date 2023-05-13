@@ -8,7 +8,7 @@ server {
     
     location / {
         root /var/www/html/;
-        index web.html;
+        index web2.html;
     }
 }
 

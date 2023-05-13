@@ -26,8 +26,8 @@ COPY /nginx/website/icono.ico /var/www/html/icono.ico
 COPY /nginx/website/portada_libros /var/www/html/portada_libros
 
 
-#COPY /nginx/website/conexbbd.php /var/www/html/conexbbd.php
-#COPY /nginx/website/web2.html /var/www/html/web2.html
+COPY /nginx/website/conexbbd.php /var/www/html/conexbbd.php
+COPY /nginx/website/web2.html /var/www/html/web2.html
 
 #Exponer puerto https & http:
 EXPOSE 443 80
