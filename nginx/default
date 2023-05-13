@@ -5,11 +5,14 @@ server {
     listen 8081 ssl;
     ssl_certificate /etc/nginx/ssl/nginx.crt;
     ssl_certificate_key /etc/nginx/ssl/nginx.key;
+    root /var/www/html/;
     
     location / {
-        root /var/www/html/;
-        index web2.html;
+        index web.php;
+    }
+    
+    location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php7.4-fpm.sock;
     }
 }
-
-
