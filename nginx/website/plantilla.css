@@ -1,0 +1,77 @@
+body {
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    }
+
+    h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 2px #333333;
+    }
+
+    #total-libros {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #bfbfbf;
+    text-shadow: 2px 2px 2px #333333;
+    font-weight: bold;
+    }
+
+    .libro {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 50px;
+    }
+
+    .libro__imagen {
+    width: 200px;
+    height: 100%;
+    margin-right: 30px;
+    border-radius: 10px;
+    }
+
+    .libro__contenido {
+    flex: 1;
+    border: 5px solid #2c2c2c;
+    border-radius: 10px;
+    background-color: rgba(44, 44, 44, 0.8);
+    padding: 20px;
+    }
+
+    .libro__id {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    }
+
+    .libro__titulo {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    }
+
+    .libro__autor {
+    font-size: 24px;
+    margin-bottom: 10px;
+    }
+
+    .libro__descripcion {
+    font-size: 18px;
+    line-height: 1.5;
+    }
+
+    p.total {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 2px #333333;
+    font-weight: bold;
+    }
