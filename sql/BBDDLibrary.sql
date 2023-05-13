@@ -39,7 +39,7 @@ CREATE TABLE `books` (
 -- Volcado de datos para la tabla `Books`
 --
 
-INSERT INTO `Books` (`book_id`, `book_title`, `author_name`, `book_description`, `book_photo`) VALUES
+INSERT INTO `books` (`book_id`, `book_title`, `author_name`, `book_description`, `book_photo`) VALUES
 (1, 'Pride and Prejudice', 'Jane Austen', 'Pride and Prejudice is a classic novel by Jane Austen. It follows the story of Elizabeth Bennet, a headstrong and independent young woman, and her tumultuous relationship with Mr. Darcy, a wealthy and proud gentleman. Set in 19th century England, the novel explores themes of love, marriage, social class, and societal expectations. With its witty dialogue, memorable characters, and enduring romance, Pride and Prejudice is considered one of the greatest works of English literature.', NULL),
 (2, '1984', 'George Orwell', '1984 is a dystopian novel by George Orwell. It depicts a totalitarian society ruled by the Party, led by Big Brother, where individualism and freedom are suppressed. The story follows Winston Smith, a disillusioned Party member, who rebels against the oppressive regime. Through vivid descriptions and thought-provoking concepts, Orwell explores the dangers of totalitarianism, censorship, and surveillance. 1984 is a chilling portrayal of a bleak future, warning about the consequences of unchecked government control and the loss of individuality.', NULL),
 (3, 'Crime and Punishment', 'Fyodor Dostoevsky', 'Crime and Punishment by Fyodor Dostoevsky is a classic novel that delves into the psychological struggles of its protagonist, Raskolnikov. He is a poor ex-student in Saint Petersburg who commits a heinous crime and battles with guilt and morality. Set against the backdrop of 19th-century Russia, the novel explores the complexities of human nature, the consequences of crime, and the search for redemption. Dostoevskys masterful writing captures the inner turmoil of Raskolnikov, making Crime and Punishment a timeless work that delves into the darkest corners of the human mind.', NULL),
@@ -150,7 +150,7 @@ Blindness is a novel written by Portuguese author José Saramago. The story depi
 --
 -- Indices de la tabla `Books`
 --
-ALTER TABLE `Books`
+ALTER TABLE `books`
   ADD PRIMARY KEY (`book_id`);
 
 --
@@ -160,7 +160,7 @@ ALTER TABLE `Books`
 --
 -- AUTO_INCREMENT de la tabla `Books`
 --
-ALTER TABLE `Books`
+ALTER TABLE `books`
   MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 COMMIT;
 
