@@ -3,9 +3,15 @@ FROM ubuntu:20.04
 #Actualización de repositorios con update y upgrade:
 RUN apt-get update -y && apt-get upgrade -y
 
-#Instalación de servicio nginx y ssl:
+#Instalación de servicio nginx y ssl, herramientas de php y mysql y supervisord:
 RUN apt-get -y install nginx 
 RUN apt-get -y install openssl
+#estas herramientas nos serviran para poder realizar codigo php y conectarnos a la BBDD
+RUN apt-get -y install php7.4-fpm
+RUN apt-get -y install php7.4-mysqli
+RUN apt-get -y install supervisor
+
+COPY /nginx/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 #Copiar configuracion base de http:
 COPY /nginx/default /etc/nginx/sites-available/default
@@ -20,17 +26,14 @@ RUN openssl req -x509 -newkey rsa:4096 -keyout /etc/nginx/ssl/nginx.key -out /et
 RUN chmod 400 /etc/nginx/ssl/nginx.key /etc/nginx/ssl/nginx.crt
 
 #Copiar los archivos basicos de la web
-COPY /nginx/website/web.html /var/www/html/web.html
-COPY /nginx/website/css.css /var/www/html/css.css
+#COPY /nginx/website/portada_libros /var/www/html/portada_libros
+COPY /nginx/website/css.css /var/www/html/plantilla.css
 COPY /nginx/website/icono.ico /var/www/html/icono.ico
-COPY /nginx/website/portada_libros /var/www/html/portada_libros
-
-
-COPY /nginx/website/conexbbd.php /var/www/html/conexbbd.php
-COPY /nginx/website/web2.html /var/www/html/web2.html
+COPY /nginx/website/web.php /var/www/html/web.php
 
 #Exponer puerto https & http:
 EXPOSE 443 80
 
 #Arranque del servidor:
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
