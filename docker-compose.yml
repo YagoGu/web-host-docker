@@ -29,6 +29,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "password"
       MYSQL_DATABASE: "BBDDLibrary"
+      MYSQL_USER: "noadmin"
       MYSQL_PASSWORD: "password"
     ports:
       - "8083:3306"
@@ -37,6 +38,7 @@ services:
         ipv4_address: 192.168.0.8
     volumes:
       - './sql/BBDDLibrary.sql:/docker-entrypoint-initdb.d/BBDDLibrary.sql'
+      - './sql/permisos.sql:/docker-entrypoint-initdb.d/permisos.sql'
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

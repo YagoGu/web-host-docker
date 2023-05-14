@@ -25,7 +25,7 @@
             $total_libros = $fila_total[0];
 
             echo "<h2>The Library</h2>";
-            echo "<p id='total-libros'><b>Total de libros: </b>" . $total_libros . "</p>";
+            echo "<p id='total-libros'><b>Total books: </b>" . $total_libros . "</p>";
 
             if ($total_libros > 0) {
                 $sql_libros = "SELECT book_id, book_title, author_name, book_description, book_photo FROM books";
@@ -33,7 +33,7 @@
 
                 while($row = mysqli_fetch_assoc($resultado_libros)) {
                     echo "<div class='libro'>";
-                        echo "<img src='". $row["book_photo"]. "' class='libro__imagen'>";
+                        echo "<img src='/portada_libros/" . $row["book_photo"]. "' class='libro__imagen'>";
                         echo "<div class='libro__contenido'>";
                             echo "<p class='libro__id'><b>ID:</b> " . $row["book_id"] . "</p>";
                             echo "<p class='libro__titulo'><b>Title:</b> " . $row["book_title"] . "</p>";

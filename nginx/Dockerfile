@@ -26,8 +26,8 @@ RUN openssl req -x509 -newkey rsa:4096 -keyout /etc/nginx/ssl/nginx.key -out /et
 RUN chmod 400 /etc/nginx/ssl/nginx.key /etc/nginx/ssl/nginx.crt
 
 #Copiar los archivos basicos de la web
-#COPY /nginx/website/portada_libros /var/www/html/portada_libros
-COPY /nginx/website/css.css /var/www/html/plantilla.css
+COPY /nginx/website/portada_libros /var/www/html/portada_libros
+COPY /nginx/website/plantilla.css /var/www/html/plantilla.css
 COPY /nginx/website/icono.ico /var/www/html/icono.ico
 COPY /nginx/website/web.php /var/www/html/web.php
 

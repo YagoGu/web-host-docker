@@ -27,12 +27,12 @@ body {
     display: flex;
     align-items: stretch;
     margin-bottom: 50px;
+    height: 100%; 
     }
 
     .libro__imagen {
     width: 200px;
-    height: 100%;
-    margin-right: 30px;
+    margin-right: 10px;
     border-radius: 10px;
     }
 
