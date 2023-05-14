@@ -43,7 +43,7 @@
                     echo "</div>";
                 }
             } else {
-                echo "<h1> No hay libros </h1>";
+                echo "<h1> There is no books </h1>";
             }
         }
     ?>
