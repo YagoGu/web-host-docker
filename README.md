@@ -1,11 +1,13 @@
-# Projecte 3 ASIX
+# Project 3 ASIR
 
-## Para inciar todo simplemente hay que utilizar el comando:
+This repository was the final project on my studies. It runs an NGINX, DNS and mySQL services to create a full werbhosting service on docker with a few clients to test it.
+
+## To initialize everything use this command:
 
   -docker-compose up --build
  
-## Para apagar todo simplemente hay que hacer
+## To turn off everythingÑ
 
-  -CTRL + C (en el mismo terminal en el que se ha relizado el comando anterior)
+  -CTRL + C (use this in the same terminal as the first command)
   
-  -docker-compose down (tambien en el mismo terminal)
+  -docker-compose down (same as the last command)
